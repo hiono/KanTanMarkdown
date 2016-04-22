@@ -444,6 +444,17 @@
     return out
   };
 
+  function CreatePrivateID(n){
+    var CODE_TABLE = "0123456789"
+        + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        + "abcdefghijklmnopqrstuvwxyz";
+    var r = "";
+    for (var i = 0, k = CODE_TABLE.length; i < n; i++){
+      r += CODE_TABLE.charAt(Math.floor(k * Math.random()));
+    }
+    return r;
+  }
+
   function Renderer(options) {
     this.options = options || {}
   }
@@ -467,7 +478,7 @@
     return html
   };
   Renderer.prototype.heading = function (text, level, raw) {
-    return "<h" + level + ' id="' + this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, "-") + '">' + text + "</h" + level + ">\n"
+    return "<h" + level + ' id="' + this.options.headerPrefix + CreatePrivateID(8) + '">' + text + "</h" + level + ">\n"
   };
   Renderer.prototype.hr = function () {
     return this.options.xhtml ? "<hr/>\n" : "<hr>\n"
