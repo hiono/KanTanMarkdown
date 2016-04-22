@@ -1,0 +1,22 @@
+.return {
+  font-size: 80%;
+  text-decoration: none;
+}
+
+/* ex-toc design */
+ul.ex-toc {
+  border: 1px dotted #000;
+}
+
+ul.ex-toc li {
+  list-style: none;
+}
+
+ul.ex-toc li a {
+  text-decoration: none;
+}
+
+ul.ex-toc span.ex-toc-label {
+  margin-right: 4px;
+}
+
