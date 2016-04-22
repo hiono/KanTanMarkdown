@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-	
+
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks("grunt-inline");
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	
+
 	//Gruntの設定
 	grunt.initConfig({
 		clean: {
@@ -50,13 +50,14 @@ module.exports = function(grunt) {
 					dest: "dist/kantanUpdate.js"
 				}]
 			}
-			
+
 		},
 		cssmin: {
 			css: {
 				files: [
 					{src: ["dist/temp/src/css/kantan.css"], dest: "dist/temp/src/css/kantan.css"},
 					{src: ["dist/temp/src/css/drawer.css"], dest: "dist/temp/src/css/drawer.css"},
+					{src: ["dist/temp/src/css/extoc.css"], dest: "dist/temp/src/css/extoc.css"},
 				]
 			}
 		},
@@ -239,4 +240,3 @@ module.exports = function(grunt) {
 		"build-updateJs",
 	]);
 };
-

@@ -81,6 +81,37 @@
 <input type="hidden" id="kantanVersion" value="<inline src="kantanVersion.txt" />">
 <input type="hidden" id="kantanEdition" value="__KANTAN_EDITION__">
 <div id="updateScriptArea"></div>
+<script id="jqueryJs">
+<inline src="js/jquery.min.js" />
+</script>
+<script id="extocJs">
+<inline src="js/extoc.js" />
+</script>
+<script>
+ajQuery(function($) {
+  var toc = $('#toc').exTOC({
+    headFrom: 3,
+    headTo: 5,
+    numbering: true,
+    numberingHead: true,
+    insertMethod: 'append',
+  });
+  // toc.getTOC().before('<b>目次</b>')
+  $('h3').append(' <a href="#toc" class="return">▲</a>');
+});
+jQuery(function($) {
+  $('a[href^=#]').click(function() {
+    var speed = 400;
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href === "" ? 'html' : href);
+    var position = target.offset().top;
+    $('body,html').animate({
+      scrollTop: position
+    }, speed, 'swing');
+    return false;
+  });
+});
+</script>
 <script id="markedJs">
 <inline src="js/marked.js" />
 </script>
